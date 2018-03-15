@@ -1,5 +1,6 @@
 package mg.studio.weatherappdesign;
 
+
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -24,8 +28,38 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void btnClick(View view) {
+
+
+    public void refreshClick(View view) {
+
+
+        Date date=new Date();
+        SimpleDateFormat ft = new SimpleDateFormat("E");
+        String temp=ft.format(date),week_day="SUNDAY";
+        Calendar cal=Calendar.getInstance();
+        cal.setTime(date);
+        int value=cal.get(Calendar.DAY_OF_WEEK);
+        switch(value)
+        {
+            case 1: week_day="SUNDAY";break;
+            case 2: week_day="MONDAY";break;
+            case 3: week_day="TUESDAY";break;
+            case 4: week_day="WEDNESDAY";break;
+            case 5: week_day="THURSDAY";break;
+            case 6: week_day="FRIDAY";break;
+            case 7: week_day="SATURDAY";break;
+
+            default: break;
+        }
+
+        ((TextView) findViewById(R.id.weekday)).setText(week_day);
+
+        SimpleDateFormat time= new SimpleDateFormat("MM/dd/yyyy");
+        ((TextView) findViewById(R.id.tv_date)).setText(time.format(date));
+
         new DownloadUpdate().execute();
+
+
     }
 
 

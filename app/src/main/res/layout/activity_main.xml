@@ -6,10 +6,11 @@
     android:layout_height="match_parent"
     android:background="#2495d1"
     android:orientation="vertical"
-    android:weightSum="8"
-    tools:context="mg.studio.weatherappdesign.MainActivity">
+    android:weightSum="8">
+
 
     <TextView
+        android:id="@+id/weekday"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
@@ -51,7 +52,7 @@
             android:layout_gravity="center"
             android:background="@drawable/button_selector"
             android:gravity="center"
-            android:onClick="btnClick"
+
             android:paddingLeft="40dp"
             android:paddingRight="40dp"
             android:text="Go to Calendar"
@@ -123,6 +124,16 @@
                     android:textSize="100sp"
                     android:textStyle="bold" />
 
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignLeft="@id/temperature_of_the_day"
+                    android:layout_marginTop="60dp"
+                    android:onClick="refreshClick"
+                    app:srcCompat="@drawable/refresh"
+                    android:background="@drawable/button_selector"/>
+
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -165,7 +176,7 @@
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
@@ -176,17 +187,21 @@
                 app:srcCompat="@drawable/rainy_small" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:gravity="center"
+
                 android:text="mon"
+                android:layout_marginTop="10dp"
                 android:textAllCaps="true"
-                android:textColor="#909090" />
+                android:background="@drawable/circle_background"
+                android:textColor="#000000" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
@@ -197,17 +212,20 @@
                 app:srcCompat="@drawable/partly_sunny_small" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:gravity="center"
+
                 android:text="tue"
+                android:layout_marginTop="10dp"
                 android:textAllCaps="true"
-                android:textColor="#909090" />
+                android:background="#ffffff"
+                android:textColor="#000000" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
@@ -218,17 +236,19 @@
                 app:srcCompat="@drawable/windy_small" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:gravity="center"
                 android:text="thu"
+                android:layout_marginTop="10dp"
                 android:textAllCaps="true"
-                android:textColor="#909090" />
+                android:background="#ffffff"
+                android:textColor="#000000" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
@@ -239,12 +259,14 @@
                 app:srcCompat="@drawable/sunny_small" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:gravity="center"
                 android:text="fri"
+                android:layout_marginTop="10dp"
                 android:textAllCaps="true"
-                android:textColor="#909090" />
+                android:background="#ffffff"
+                android:textColor="#000000" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

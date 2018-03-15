@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--When the refresh icon is pressed-->
+    <item android:drawable="@drawable/refresh_shape_pressed" android:state_pressed="true" />
+    <!--Default-->
+    <item android:drawable="@drawable/refresh_shape" />
+
+</selector>
